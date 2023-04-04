@@ -1,15 +1,20 @@
 #!/bin/bash
 echo "Enter the width: "
 read n
+black='\033[1;40m'
+white='\033[1;47m'
+normal='\033[0m'
 for((i=0;i<n;i++))
 do
 	for((j=0;j<n;j++))
 	do
-		if (( `expr $j % 2` == 0 ))
+		if (( `expr \( $i + $j \) % 2` == 0 ))
 		then
-			echo -e -n "\\\\e[40m"""
+			#echo -n "black"
+			echo -e -n "$black `printf " "` $normal"
 		else
-			echo -e -n "\\\\e[47m"""
+			#echo -n "white"
+			echo -e -n "$white `printf " "` $normal"
 		fi
 	done
 	printf "\n"
