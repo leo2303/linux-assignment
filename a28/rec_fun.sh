@@ -6,7 +6,9 @@ rec() {
 		return 0
 	else
 		echo "$1"
-		shift
+		# remove one parameter each time
+		shift 1
+		# parse the reaming parameter to next time recursive
 		rec "$@"
 	fi
 }
