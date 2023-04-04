@@ -1,9 +1,9 @@
 #!/bin/bash
 echo "Enter the width: "
 read n
-black='\033[1;40m'
-white='\033[1;47m'
-normal='\033[0m'
+black='\e[1;40m'
+white='\e[1;47m'
+normal='\e[0m'
 for((i=0;i<n;i++))
 do
 	for((j=0;j<n;j++))
